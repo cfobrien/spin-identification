@@ -17,7 +17,7 @@ ind = find(tau<25);
 tau = tau(ind);
 y = y(ind);
 
-tau=tau*1e-6;
+tau=tau ./ 1e6;
 
 %% DNN
 dnn_spins = csvread('dnn_spins.csv') .* (2 * pi * 1e3);
@@ -38,7 +38,7 @@ save results_omp.mat A_omp B_omp
 t=1;
 % for t=1:10
 %     t
-Niter=5e6; %Number of MCMC iterations
+Niter=5e5; %Number of MCMC iterations
 
 K = 10;
 A=-1e6+2e6*rand(K,1);
